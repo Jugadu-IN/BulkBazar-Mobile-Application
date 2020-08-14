@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState,useContext} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Animated } from 'react-native';
 import SplashScreen from './src/spashScreen';
 import HomeStack from './src/homeStack';
 import HomeDrawer from './src/homeDrawer';
@@ -18,13 +18,23 @@ export default function App() {
 
     const removeSplash = async() => {
       await waitTask();
-      setLoading(false);
+      anim();
     }
     removeSplash();
 
+    const [fadeValue,changeval] = useState(new Animated.Value(1));
+
+    const anim = () => {
+        Animated.timing(fadeValue,{
+          toValue : 0,
+          duration : 200,
+          useNativeDriver: true
+        }).start(() => setLoading(false));
+    };
+
     return (
       <View style={styles.container}>
-      {isLoading ? <SplashScreen /> : <HomeDrawer />}
+      {isLoading ? <SplashScreen fadeValue={fadeValue}/> : <HomeDrawer />}
       </View>
     );
 }
