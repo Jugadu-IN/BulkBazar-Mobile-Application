@@ -7,6 +7,7 @@ import bulkbazaarImage from '../../assets/bulkbazar logo.png';
 import { Entypo } from '@expo/vector-icons';
 import { Linking} from 'react-native'
 import HeaderComponent from '../headerComponent';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const mainScreen = (props) => {
 
@@ -16,9 +17,10 @@ const mainScreen = (props) => {
         <View style={styles.mainCont}>
             <TouchableWithoutFeedback onPress={() => props.navigation.navigate("Home Page")}>
                 <View  style={[styles.btnSize,styles.bulkbazarBtn]}>
-                    <Image style={styles.bulkbazaarImg}
+                   { /*<Image style={styles.bulkbazaarImg}
                     source={bulkbazaarImage}
-                    />
+    />*/ }          
+                    <MaterialCommunityIcons name="web" size={30} color="white"  style={styles.iconSetting}/>
                     <Text style={styles.btnText}>
                         BulkBazar.in
                     </Text>
@@ -48,7 +50,7 @@ const mainScreen = (props) => {
                     </Text>
                 </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => Linking.openURL('https://www.facebook.com/Jugadu.in')}>
+            <TouchableWithoutFeedback onPress={() => Linking.openURL('https://wa.me/919313220099')}>
                 <View  style={[styles.btnSize,styles.whatsappBtn]}>
                 <FontAwesome5 name="whatsapp" size={30} color="white" style={styles.iconSetting}/>
                     <Text style={styles.btnText}>

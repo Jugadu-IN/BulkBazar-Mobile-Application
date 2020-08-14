@@ -6,7 +6,8 @@ const splashScreen = (props) => {
 
     return(
         <Animated.View style={[styles.mainConatiner,{opacity : props.fadeValue}]}>
-            <Image  style={{width : "80%",height : 200,resizeMode : "contain"}} source={bulkbazaarImage}/>
+            {/*<Image  style={{width : "80%",height : 200,resizeMode : "contain"}} source={bulkbazaarImage}/>*/}
+            <Text style={{fontSize : 50, fontWeight : '500'}}>BulkBazar</Text>
         </Animated.View>
     )
 };

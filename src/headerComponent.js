@@ -12,8 +12,8 @@ export default (props) => {
         <View style={[styles.header,styles.bgColor]}>
             <TouchableWithoutFeedback onPress={() => props.navigation.openDrawer()}><Feather name="menu" size={35} color="black" style={styles.hamburger}/></TouchableWithoutFeedback>
             <View style={{flexDirection:'row', alignItems : 'center' ,justifyContent : 'center'}}>
-            <Image source={bulkbazaarImage} style={styles.headerImg} 
-        resizeMode='contain'/>
+            {/*<Image source={bulkbazaarImage} style={styles.headerImg} 
+        resizeMode='contain'/>*/}
         <Text style={styles.headerText}>BulkBazar</Text> 
         </View>
         </View>
